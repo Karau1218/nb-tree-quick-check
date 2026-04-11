@@ -36,6 +36,12 @@ public class NbQuickCheck {
    */
   public static int minVal(Node<Integer> root) {
     if (root == null) return Integer.MAX_VALUE;
+    int min = root.value;
+    for (Node<Integer> child : root.children) {
+        min = Math.min(min, minVal(child));
+    }
+
+    return min; 
 
    
 }
